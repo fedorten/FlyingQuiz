@@ -266,12 +266,14 @@
 
             if (text === targetWord) {
                 score += CONFIG.pointsCorrect;
+                timeLeft += CONFIG.timeBonus / 1000;
                 setNewTarget();
             } else {
                 score += CONFIG.pointsWrong;
             }
 
             document.getElementById('score').textContent = score;
+            document.getElementById('timer').textContent = timeLeft;
 
             const idx = activeWords.findIndex(w => w.element === wordObj.element);
             if (idx > -1) {
