@@ -53,6 +53,8 @@
         #timer {
             font-size: 28px;
             color: #fff;
+            min-width: 80px;
+            text-align: center;
         }
 
         #start-screen,
@@ -273,7 +275,7 @@
             }
 
             document.getElementById('score').textContent = score;
-            document.getElementById('timer').textContent = timeLeft;
+            document.getElementById('timer').textContent = Math.floor(timeLeft);
 
             const idx = activeWords.findIndex(w => w.element === wordObj.element);
             if (idx > -1) {
